@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Corona</title>
+	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="/css/style.css">
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+	<div class="wrapper">
+		<div class="content">
+			
+			<div class="title">
+				<h3>Data Covid-19</h3>
+				<h1>Kab. Temanggung</h1>
+				<h4>Update terakhir <%= data.tanggal %></h4>
+			</div>
+
+			<div class="row box-lebar-row">
+				<div class="col-4 sembuh">
+					<h4>Sembuh</h4>
+					<h1><%= data.sembuh %><sup><%= selisih[3] %></sup></h1>
+
+				</div>
+				<div class="col-4 positif">
+					<h4>Positif</h4>
+					<h1><%= data.positif %><sup><%= selisih[2] %></sup></h1>
+				</div>
+				<div class="col-4 meninggal">
+					<h4>Meninggal</h4>
+					<h1><%= data.meninggal %><sup><%= selisih[4] %></sup></h1>
+				</div>
+			</div>
+
+			<div class="row box-kecil-container">
+				<div class="col-6 col-odd">
+					<div class="box-kecil odp">
+						<h4>ODP</h4>
+						<h1><%= data.odp %><sup><%= selisih[0] %></sup></h1>
+					</div>
+				</div>
+				<div class="col-6 col-even">
+					<div class="box-kecil pdp">
+						<h4>PDP</h4>
+						<h1><%= data.pdp %><sup><%= selisih[1] %></sup></h1>
+					</div>
+				</div>
+			</div>
+
+			<div>
+				<h4 class="source">corona.temanggungkab.go.id</h4>
+			</div>
+
+		</div>
+
+		<div class="bg-putih">
+			
+		</div>
+	</div>
+
+
+</body>
+</html>
