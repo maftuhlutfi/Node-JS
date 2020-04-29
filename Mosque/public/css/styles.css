@@ -1,0 +1,161 @@
+body {
+	background-image: url("../images/bg.png");
+	/* Background image is centered vertically and horizontally at all times */
+	background-position: center center;
+
+	/* Background image doesn't tile */
+	background-repeat: no-repeat;
+
+	/* Background image is fixed in the viewport so that it doesn't move when 
+	 the content's height is greater than the image's height */
+	background-attachment: fixed;
+
+	/* This is what makes the background image rescale based
+	 on the container's size */
+	background-size: cover;
+
+	/* Set a background color that will be displayed
+	 while the background image is loading */
+	background-color: #464646;
+}
+
+.mosque-name {
+	text-align: center;
+	font-family: Goudy Old Style;
+	line-height: 13px;
+	position: relative;
+	top: 225px;
+	color: #fff;
+}
+
+.mosque-name h1 {
+	font-size: 2rem;
+	font-weight: bold;
+}
+
+.clock {
+	font-family: Montserrat;
+	position: relative;
+	top: 180px;
+	color: #ffcc00;
+	text-align: center;
+}
+
+.clock h1 {
+	font-size: 6.5rem;
+	font-weight: 500;
+}
+
+.date {
+	text-align: center;
+	font-family: Goudy Old Style;
+	line-height: 13px;
+	position: absolute;
+	top: 500px;
+	color: white;
+	font-weight: 100;
+	display: inline;
+	left: 30px;
+}
+
+.date h1 {
+	font-size: 3rem;
+}
+
+.date h2 {
+	color: #ffcc00;
+	line-height: 12px;
+	font-size: 2rem;
+}
+
+.rectangle {
+  height: 3px;
+  width: 260px;
+  margin: 20px 0;
+  background-color: white;
+}
+
+.pray {
+	position: absolute;
+	font-family: Montserrat;
+	font-weight: 200px;
+	top: 475px;
+	left: 300px;
+}
+
+.pray-box {
+	display: inline;
+	margin: 0 10px;
+}
+
+.pray-text {
+	position: absolute;
+	color: white;
+	top: 40px;
+}
+
+.fajar .pray-text {
+	left: 40px;
+	text-align: center;
+}
+
+.zohar .pray-text {
+	left: 220px;
+	text-align: center;
+}
+
+.asr .pray-text {
+	left: 390px;
+	text-align: center;
+}
+
+.maghrib .pray-text {
+	left: 550px;
+	text-align: center;
+}
+
+.esha .pray-text {
+	left: 735px;
+	text-align: center;
+}
+
+.jummah .pray-text {
+	left: 895px;
+	text-align: center;
+}
+
+.pray-text h1 {
+	color: #ffcc00;
+	font-weight: 500;
+}
+
+/* Running Text */
+
+marquee {
+	margin-top: 5px;
+	width: 100%;
+}
+
+.info {
+	position: absolute;
+	bottom: 1px;
+	background-color: #ededed;
+	width: 100%;
+	left: 0px;
+}
+
+.info .text-container {
+	font-family: Bahnschrift;
+	font-size: 1.5em;
+}
+
+.blinking{
+    animation:blinkingText 1s infinite;
+}
+@keyframes blinkingText{
+    0%{     color: #fff;    }
+    49%{    color: #fff; }
+    60%{    color: transparent; }
+    99%{    color:transparent;  }
+    100%{   color: #fff;    }
+}

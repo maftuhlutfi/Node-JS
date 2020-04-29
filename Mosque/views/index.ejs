@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Mosque</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	
+	<link rel="stylesheet" type="text/css" href="/css/styles.css">
+	<link rel="shortcut icon" type="image/png" href="/favicon.png"/>
+</head>
+<body onload="bleep.play()">
+	<div class="mosque-name">
+		<h1>Al-Mustaqeem</h1>
+		<h1>Mosque</h1>
+	</div>
+	<div class="clock" id="clock">
+		<h1></h1>
+	</div>
+	<div class="date">
+		<h1 class="day">0</h1>
+		<div class="rectangle"></div>
+		<h2 class="month">0</h2>
+		<h2 class="year">0</h2>
+	</div>
+
+	<div class="pray">
+		<div class="pray-box fajar">
+			<img src="/images/frame.png" width="14%">
+			<div class="pray-text">
+				<h2>Fajar</h2>
+				<h1><%= fajar %></h1>
+			</div>
+		</div>
+		<div class="pray-box zohar">
+			<img src="/images/frame.png" width="14%">
+			<div class="pray-text">
+				<h2>Zohar</h2>
+				<h1><%= zohar %></h1>
+			</div>
+		</div>
+		<div class="pray-box asr">
+			<img src="/images/frame.png" width="14%">
+			<div class="pray-text">
+				<h2>Asr</h2>
+				<h1><%= asr %></h1>
+			</div>
+		</div>
+		<div class="pray-box maghrib">
+			<img src="/images/frame.png" width="14%">
+			<div class="pray-text">
+				<h2>Maghrib</h2>
+				<h1><%= maghrib %></h1>
+			</div>
+		</div>
+		<div class="pray-box esha">
+			<img src="/images/frame.png" width="14%">
+			<div class="pray-text">
+				<h2>Esha</h2>
+				<h1><%= esha %></h1>
+			</div>
+		</div>
+		<div class="pray-box jummah">
+			<img src="/images/frame.png" width="14%">
+			<div class="pray-text">
+				<h2>Jummah</h2>
+				<h1><%= jummah %></h1>
+			</div>
+		</div>
+	</div>
+
+	<div class="info">
+		<div class="runtext-container">
+			<div class="main-runtext">
+				<marquee direction="">
+
+					<div class="text-container">
+				   		Text Runing Here Lorep Ipsum Hadist Text Here or Other Headline Here Text Here Runing
+				    </div> 
+
+				</marquee>
+			</div>
+		</div>
+	</div>
+
+</body>
+
+<script src="/js/jquery.min.js"></script>
+<script src="/js/script.js" charset="utf-8"></script>
+<script>
+	var countDayPerMonth = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+	var today = new Date();
+	var todayOrder = 0;
+	var month = today.getMonth();
+	var date = today.getDate();
+	for (var i = 0; i <= month; i++) {
+	 	todayOrder += countDayPerMonth[i];
+	} 
+	todayOrder += date;
+	if (today.getFullYear() % 4 == 0) {
+		todayOrder += 1;
+	}
+	jQuery.get("/hadith/text.txt", function(txt){
+	    var i = txt.split("+");
+	    $(".text-container").html(i[todayOrder])
+	})
+	$(".clock").on("change", function() {
+		bleep.play();
+		blinktext = "Start";
+	})
+	startTime();
+	
+	
+	blinktext = "Start";
+</script>
+</html>
